@@ -9,7 +9,7 @@ export default function Navbar() {
       display="flex"
       justifyContent="center"
       gap={1}
-      style={{ backgroundColor: "white", borderRadius: 3, padding: 10 }}
+      style={{ backgroundColor: "white", borderRadius: 10, padding: 10 }}
     >
       <Button variant="contained" onClick={() => navigate("/")}>
         Home
