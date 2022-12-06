@@ -1,6 +1,6 @@
-import { Helmet } from "react-helmet";
 import Box from "@mui/material/Box";
 import { ReactNode } from "react";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 interface PageWrapperProps {
   title: string;
@@ -15,12 +15,14 @@ export default function PageWrapper({
 }: PageWrapperProps) {
   return (
     <>
-      <Helmet>
-        <title>{title}</title>
-      </Helmet>
-      <Box flexDirection="column" gap={gap || 0} p={2}>
-        {children}
-      </Box>
+      <HelmetProvider>
+        <Helmet>
+          <title>{title}</title>
+        </Helmet>
+        <Box flexDirection="column" gap={gap || 0} p={2}>
+          {children}
+        </Box>
+      </HelmetProvider>
     </>
   );
 }
