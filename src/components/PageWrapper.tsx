@@ -5,12 +5,14 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 interface PageWrapperProps {
   title: string;
   gap?: number;
+  noGap?: boolean;
   children: ReactNode;
 }
 
 export default function PageWrapper({
   title,
   gap,
+  noGap,
   children,
 }: PageWrapperProps) {
   return (
@@ -19,7 +21,7 @@ export default function PageWrapper({
         <Helmet>
           <title>{title}</title>
         </Helmet>
-        <Box flexDirection="column" gap={gap || 0} p={2}>
+        <Box flexDirection="column" gap={gap || 0} mt={noGap ? 0 : 1}>
           {children}
         </Box>
       </HelmetProvider>
