@@ -34,7 +34,7 @@ export default function MainCard({
         padding: padding || 2,
         borderRadius: 3,
         backgroundColor: transparent ? "transparent" : "white",
-        backgroundImage: `url(${bg})` || "",
+        backgroundImage: bg ? `url(${bg})` : null,
         backgroundSize: bg ? "cover" : "",
         ...sx,
       }}
