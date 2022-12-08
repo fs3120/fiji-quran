@@ -1,7 +1,6 @@
 import MainCard from "../../components/MainCard";
 import PageWrapper from "../../components/PageWrapper";
 import Typography from "@mui/material/Typography";
-import { Box } from "@mui/material";
 
 export default function Home() {
   return (
