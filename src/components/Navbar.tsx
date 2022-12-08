@@ -13,7 +13,7 @@ export default function Navbar() {
   const navigate = useNavigate();
   const [position, setPosition] = useState();
   return (
-    <AppBar sx={{ backgroundColor: "#68B984", marginBottom: 100 }}>
+    <AppBar position="static" sx={{ backgroundColor: "#68B984" }} >
       <Container>
         <Toolbar>
           <AutoStoriesIcon sx={{ marginRight: 3 }} />
