@@ -9,7 +9,7 @@ interface MainCardProps {
   sx?: SxProps<Theme> | undefined;
   padding?: number;
   gap?: number;
-  direction?: any;
+  direction?: "row" | "column";
   transparent?: boolean;
 }
 
