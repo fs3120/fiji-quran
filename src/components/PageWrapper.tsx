@@ -21,7 +21,7 @@ export default function PageWrapper({
         <Helmet>
           <title>{title}</title>
         </Helmet>
-        <Box flexDirection="column" gap={gap || 0} mt={noGap ? 0 : 1}>
+        <Box display="flex" flexDirection="column" gap={gap || 0} mt={noGap ? 0 : 1}>
           {children}
         </Box>
       </HelmetProvider>
