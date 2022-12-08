@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 export default function Home() {
   return (
     <PageWrapper title="Homepage">
-      <MainCard>
+      <MainCard sx={{ marginTop:10 }}>
         <Typography variant="h4">Homepage</Typography>
       </MainCard>
     </PageWrapper>
