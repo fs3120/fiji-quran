@@ -32,7 +32,6 @@ export default function MainCard({
       gap={gap || 0}
       sx={{
         padding: padding || 2,
-        borderRadius: 3,
         backgroundColor: transparent ? "transparent" : "white",
         backgroundImage: bg ? `url(${bg})` : null,
         backgroundSize: bg ? "cover" : "",
