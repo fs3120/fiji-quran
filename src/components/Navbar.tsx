@@ -12,11 +12,11 @@ import Sidebar from "./Sidebar";
 
 export default function Navbar() {
   const navigate = useNavigate();
-  const [position, setPosition] = useState();
+  const [position, setPosition] = useState(0);
   return (
     <AppBar position="static" sx={{ backgroundColor: "#68B984" }}>
       <Toolbar>
-        <Sidebar/>
+        <Sidebar />
         <AutoStoriesIcon sx={{ marginRight: 3 }} />
         <Typography sx={{ letterSpacing: ".3rem" }}>Fiji Quran</Typography>
         <Tabs
@@ -24,16 +24,21 @@ export default function Navbar() {
           sx={{ marginLeft: "auto" }}
           value={position}
           onChange={(e, index) => setPosition(index)}
+          TabIndicatorProps={{ style: { backgroundColor: "transparent" } }}
         >
           <Tab onClick={() => navigate("/")} label="Home" />
           <Tab onClick={() => navigate("/about")} label="About" />
-          <a
-            style={{ textDecoration: "none", color: "white" }}
-            target="_blank"
-            href="https://github.com/fikrisyahid/fiji-quran"
-          >
-            <Tab label="Github" icon={<OpenInNewIcon />} iconPosition="end" />
-          </a>
+          <Tab
+            label="Github"
+            icon={<OpenInNewIcon />}
+            onClick={() => {
+              window.open(
+                "https://github.com/fikrisyahid/fiji-quran",
+                "_blank"
+              );
+            }}
+            iconPosition="end"
+          />
         </Tabs>
       </Toolbar>
     </AppBar>
