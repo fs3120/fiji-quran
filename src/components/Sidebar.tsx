@@ -4,24 +4,31 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import Box from "@mui/material/Box";
-import Button from '@mui/material/Button';
-import MenuIcon from '@mui/icons-material/Menu';
-import Drawer from '@mui/material/Drawer';
+import Button from "@mui/material/Button";
+import MenuIcon from "@mui/icons-material/Menu";
+import Drawer from "@mui/material/Drawer";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import BookmarksIcon from "@mui/icons-material/Bookmarks";
+import MenuBookIcon from "@mui/icons-material/MenuBook";
+import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
+
+const menuLists = [
+  ["Juz", <BookmarksIcon />],
+  ["Surah", <LibraryBooksIcon />],
+  ["Page", <MenuBookIcon />],
+];
 
 export default function Sidebar() {
-  const [state, setState] = useState(false);
-
-  const toggleDrawer = (open: boolean) => (event: React.MouseEvent) => {
-    setState(open);
-  };
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   const list = () => (
-    <Box role="presentation" onClick={toggleDrawer(false)}>
+    <Box onClick={() => setDrawerOpen(false)} sx={{ width: "15rem" }}>
       <List>
-        {["Juz", "Surah", "Page"].map((text, index) => (
-          <ListItem key={text} disablePadding>
+        {menuLists.map((item, index) => (
+          <ListItem key={index} disablePadding>
             <ListItemButton>
-              <ListItemText primary={text} />
+              <ListItemIcon>{item[1]}</ListItemIcon>
+              <ListItemText primary={item[0]} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -31,10 +38,10 @@ export default function Sidebar() {
 
   return (
     <>
-      <Button onClick={toggleDrawer(true)} sx={{ color: "white" }}>
+      <Button onClick={() => setDrawerOpen(true)} sx={{ color: "white" }}>
         <MenuIcon />
       </Button>
-      <Drawer open={state} onClose={toggleDrawer(false)}>
+      <Drawer open={drawerOpen} onClose={() => setDrawerOpen(false)}>
         {list()}
       </Drawer>
     </>
