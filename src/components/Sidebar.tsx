@@ -11,20 +11,22 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import BookmarksIcon from "@mui/icons-material/Bookmarks";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
 import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
+import AutoStoriesIcon from "@mui/icons-material/AutoStories";
+import Typography from "@mui/material/Typography";
 
-const menuLists = [
-  ["Juz", <BookmarksIcon />],
-  ["Surah", <LibraryBooksIcon />],
-  ["Page", <MenuBookIcon />],
+const menuListsItem = [
+  ["Juz", <BookmarksIcon sx={{ color: "#68b883" }} />],
+  ["Surah", <LibraryBooksIcon sx={{ color: "#68b883" }} />],
+  ["Page", <MenuBookIcon sx={{ color: "#68b883" }} />],
 ];
 
 export default function Sidebar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
-  const list = () => (
+  const MenuLists = () => (
     <Box onClick={() => setDrawerOpen(false)} sx={{ width: "15rem" }}>
       <List>
-        {menuLists.map((item, index) => (
+        {menuListsItem.map((item, index) => (
           <ListItem key={index} disablePadding>
             <ListItemButton>
               <ListItemIcon>{item[1]}</ListItemIcon>
@@ -42,7 +44,20 @@ export default function Sidebar() {
         <MenuIcon />
       </Button>
       <Drawer open={drawerOpen} onClose={() => setDrawerOpen(false)}>
-        {list()}
+        <Box display="flex" flexDirection="column" alignItems="center">
+          <AutoStoriesIcon
+            sx={{
+              fontSize: "70px",
+              color: "#68b883",
+              marginTop: 2,
+              marginBottom: 0.5,
+            }}
+          />
+          <Typography variant="h5" fontWeight={300} mb={1}>
+            Fiji Quran
+          </Typography>
+          <MenuLists />
+        </Box>
       </Drawer>
     </>
   );
