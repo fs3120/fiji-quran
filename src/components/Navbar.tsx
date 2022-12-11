@@ -23,7 +23,11 @@ export default function Navbar() {
           textColor="inherit"
           sx={{ marginLeft: "auto" }}
           value={position}
-          onChange={(e, index) => setPosition(index)}
+          onChange={(e, index) => {
+            if (index !== 2) {
+              setPosition(index);
+            }
+          }}
           TabIndicatorProps={{ style: { backgroundColor: "transparent" } }}
         >
           <Tab onClick={() => navigate("/")} label="Home" />
