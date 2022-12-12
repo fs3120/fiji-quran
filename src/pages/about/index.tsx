@@ -2,7 +2,7 @@ import MainCard from "../../components/MainCard";
 import PageWrapper from "../../components/PageWrapper";
 import Typography from "@mui/material/Typography";
 
-export default function About() {
+export default function AboutPage() {
   return (
     <PageWrapper title="About">
       <MainCard>
