@@ -13,6 +13,7 @@ import MenuBookIcon from "@mui/icons-material/MenuBook";
 import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 import Typography from "@mui/material/Typography";
+import Divider from '@mui/material/Divider';
 
 const menuListsItem = [
   ["Juz", <BookmarksIcon sx={{ color: "#68b883" }} />],
@@ -53,9 +54,10 @@ export default function Sidebar() {
               marginBottom: 0.5,
             }}
           />
-          <Typography variant="h5" fontWeight={300} mb={1}>
+          <Typography variant="h5" sx={{ letterSpacing: ".3rem" }} fontWeight={300} mb={1}>
             Fiji Quran
           </Typography>
+          <Divider sx={{width:'75%'}} />
           <MenuLists />
         </Box>
       </Drawer>
