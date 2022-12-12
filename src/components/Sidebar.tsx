@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
@@ -13,10 +13,12 @@ import MenuBookIcon from "@mui/icons-material/MenuBook";
 import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 import Typography from "@mui/material/Typography";
-import Divider from '@mui/material/Divider';
-import { useNavigate } from 'react-router-dom';
+import Divider from "@mui/material/Divider";
+import { useNavigate } from "react-router-dom";
 
-const menuListsItem:any[] = [
+type TMenuListItem = [string, ReactNode, string];
+
+const menuListsItem: TMenuListItem[] = [
   ["Juz", <BookmarksIcon sx={{ color: "#68b883" }} />, "/juz"],
   ["Surah", <LibraryBooksIcon sx={{ color: "#68b883" }} />, "/surah"],
   ["Page", <MenuBookIcon sx={{ color: "#68b883" }} />, "/page"],
@@ -30,7 +32,11 @@ export default function Sidebar() {
     <Box onClick={() => setDrawerOpen(false)} sx={{ width: "15rem" }}>
       <List>
         {menuListsItem.map((item, index) => (
-          <ListItem onClick={() => navigate(item[2])} key={index} disablePadding>
+          <ListItem
+            onClick={() => navigate(item[2])}
+            key={index}
+            disablePadding
+          >
             <ListItemButton>
               <ListItemIcon>{item[1]}</ListItemIcon>
               <ListItemText primary={item[0]} />
@@ -56,10 +62,15 @@ export default function Sidebar() {
               marginBottom: 0.5,
             }}
           />
-          <Typography variant="h5" sx={{ letterSpacing: ".3rem" }} fontWeight={300} mb={1}>
+          <Typography
+            variant="h5"
+            sx={{ letterSpacing: ".3rem" }}
+            fontWeight={300}
+            mb={1}
+          >
             Fiji Quran
           </Typography>
-          <Divider sx={{width:'75%'}} />
+          <Divider sx={{ width: "75%" }} />
           <MenuLists />
         </Box>
       </Drawer>
