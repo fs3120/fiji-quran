@@ -14,21 +14,23 @@ import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 import Typography from "@mui/material/Typography";
 import Divider from '@mui/material/Divider';
+import { useNavigate } from 'react-router-dom';
 
-const menuListsItem = [
-  ["Juz", <BookmarksIcon sx={{ color: "#68b883" }} />],
-  ["Surah", <LibraryBooksIcon sx={{ color: "#68b883" }} />],
-  ["Page", <MenuBookIcon sx={{ color: "#68b883" }} />],
+const menuListsItem:any[] = [
+  ["Juz", <BookmarksIcon sx={{ color: "#68b883" }} />, "/juz"],
+  ["Surah", <LibraryBooksIcon sx={{ color: "#68b883" }} />, "/surah"],
+  ["Page", <MenuBookIcon sx={{ color: "#68b883" }} />, "/page"],
 ];
 
 export default function Sidebar() {
+  const navigate = useNavigate();
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const MenuLists = () => (
     <Box onClick={() => setDrawerOpen(false)} sx={{ width: "15rem" }}>
       <List>
         {menuListsItem.map((item, index) => (
-          <ListItem key={index} disablePadding>
+          <ListItem onClick={() => navigate(item[2])} key={index} disablePadding>
             <ListItemButton>
               <ListItemIcon>{item[1]}</ListItemIcon>
               <ListItemText primary={item[0]} />
