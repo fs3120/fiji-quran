@@ -4,8 +4,8 @@ import ErrorPage from "./pages/error";
 import HomePage from "./pages/home";
 import AboutPage from "./pages/about";
 import JuzPage from "./pages/juz";
-import SurahPage from "./pages/surah";
-import PagePage from "./pages/page";
+import SuratPage from "./pages/surat";
+import HalamanPage from "./pages/halaman";
 
 const router = createBrowserRouter([
   {
@@ -26,12 +26,12 @@ const router = createBrowserRouter([
         element: <JuzPage />,
       },
       {
-        path: "/surah",
-        element: <SurahPage />,
+        path: "/surat",
+        element: <SuratPage />,
       },
       {
-        path: "/page",
-        element: <PagePage />,
+        path: "/halaman",
+        element: <HalamanPage />,
       },
     ],
   },

@@ -2,11 +2,11 @@ import MainCard from "../../components/MainCard";
 import PageWrapper from "../../components/PageWrapper";
 import Typography from "@mui/material/Typography";
 
-export default function PagePage() {
+export default function SuratPage() {
   return (
-    <PageWrapper title="Page">
+    <PageWrapper title="Surah Page">
       <MainCard>
-        <Typography variant="h4">Ini halaman page</Typography>
+        <Typography variant="h4">Ini Halaman Surah</Typography>
       </MainCard>
     </PageWrapper>
   );

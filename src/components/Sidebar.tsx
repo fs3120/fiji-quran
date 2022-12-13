@@ -20,8 +20,8 @@ type TMenuListItem = [string, ReactNode, string];
 
 const menuListsItem: TMenuListItem[] = [
   ["Juz", <BookmarksIcon sx={{ color: "#68b883" }} />, "/juz"],
-  ["Surah", <LibraryBooksIcon sx={{ color: "#68b883" }} />, "/surah"],
-  ["Page", <MenuBookIcon sx={{ color: "#68b883" }} />, "/page"],
+  ["Surat", <LibraryBooksIcon sx={{ color: "#68b883" }} />, "/surat"],
+  ["Halaman", <MenuBookIcon sx={{ color: "#68b883" }} />, "/halaman"],
 ];
 
 export default function Sidebar() {
