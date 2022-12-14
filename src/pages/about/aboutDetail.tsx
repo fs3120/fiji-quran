@@ -1,6 +1,6 @@
 import { Container } from "@mui/material";
 
-const ContentAbout = () => {
+const AboutDetail = () => {
   return (
     <Container sx={{ padding: "15px", margin: "10px" }}>
       <p style={{ fontSize: "1.3rem", textAlign: "center", color: "grey" }}>
@@ -14,4 +14,4 @@ const ContentAbout = () => {
   );
 };
 
-export default ContentAbout;
+export default AboutDetail;
