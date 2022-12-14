@@ -1,8 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
-import About from "./pages/about";
-import Home from "./pages/home";
 import Layout from "./layout";
 import ErrorPage from "./pages/error";
+import HomePage from "./pages/home";
+import AboutPage from "./pages/about";
+import JuzPage from "./pages/juz";
+import SuratPage from "./pages/surat";
+import HalamanPage from "./pages/halaman";
 
 const router = createBrowserRouter([
   {
@@ -12,11 +15,23 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />,
+        element: <HomePage />,
       },
       {
         path: "/about",
-        element: <About />,
+        element: <AboutPage />,
+      },
+      {
+        path: "/juz",
+        element: <JuzPage />,
+      },
+      {
+        path: "/surat",
+        element: <SuratPage />,
+      },
+      {
+        path: "/halaman",
+        element: <HalamanPage />,
       },
     ],
   },
