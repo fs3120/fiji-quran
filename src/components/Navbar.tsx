@@ -4,15 +4,14 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import { useState } from "react";
-
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import Sidebar from "./Sidebar";
 
+const navbarItem = ["/", "/about"];
+
 export default function Navbar() {
   const navigate = useNavigate();
-  const [position, setPosition] = useState(0);
   return (
     <AppBar position="static" sx={{ backgroundColor: "#68B984" }}>
       <Toolbar>
@@ -22,12 +21,7 @@ export default function Navbar() {
         <Tabs
           textColor="inherit"
           sx={{ marginLeft: "auto" }}
-          value={position}
-          onChange={(e, index) => {
-            if (index !== 2) {
-              setPosition(index);
-            }
-          }}
+          value={navbarItem.findIndex((e) => e === location.pathname)}
           TabIndicatorProps={{ style: { backgroundColor: "transparent" } }}
         >
           <Tab onClick={() => navigate("/")} label="Home" />
