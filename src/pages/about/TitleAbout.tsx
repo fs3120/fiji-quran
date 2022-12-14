@@ -1,13 +1,13 @@
 import Typography from "@mui/material/Typography";
 
 type Props = {
-  title:string,
+  title: string;
 };
 
-const TitleAbout = ({title}:Props) => {
+const TitleAbout = ({ title }: Props) => {
   return (
     <Typography
-      sx={{ marginTop: "50px", color: "#68B984", fontWeight:"bold" }}
+      sx={{ marginTop: "50px", color: "#68B984", fontWeight: "bold" }}
       align="center"
       variant="h4"
     >
