@@ -65,7 +65,8 @@ export default function Sidebar() {
           <Typography
             variant="h5"
             sx={{ letterSpacing: ".3rem" }}
-            fontWeight={300}
+            fontWeight="regular"
+            color="grey"
             mb={1}
           >
             Fiji Quran
