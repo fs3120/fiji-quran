@@ -7,7 +7,7 @@ type Props = {
 const TitleAbout = ({title}:Props) => {
   return (
     <Typography
-      sx={{ marginTop: "50px", color: "#68B984" }}
+      sx={{ marginTop: "50px", color: "#68B984", fontWeight:"bold" }}
       align="center"
       variant="h4"
     >
