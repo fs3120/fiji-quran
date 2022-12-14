@@ -1,20 +1,19 @@
 import Typography from "@mui/material/Typography";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
 import MainCard from "../../components/MainCard";
-import Button from "@mui/material/Button";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import IconButton from "@mui/material/IconButton";
+import Box from "@mui/material/Box";
 
-type Props = {
+interface TeamDetailItemProps {
   name: string;
   desc: string;
   img: string;
   githubLink: string;
   igLink: string;
   linkedInLink: string;
-};
+}
 
 const TeamDetailItem = ({
   name,
@@ -23,62 +22,57 @@ const TeamDetailItem = ({
   githubLink,
   igLink,
   linkedInLink,
-}: Props) => {
+}: TeamDetailItemProps) => {
   return (
-    <Card>
+    <MainCard center sx={{ boxShadow: "0px 0px 10px 0px grey" }}>
       <img
         src={img}
         alt={name}
         style={{
-          border: "5px solid #555",
-          height: "43vh",
-          width: "43vh",
-          marginLeft: "auto",
-          marginRight: "auto",
-          display: "flex",
+          padding: 20,
+          height: "20vw",
+          width: "20vw",
           borderRadius: "50%",
         }}
       />
-      <CardContent>
-        <Typography
-          sx={{ textAlign: "center" }}
-          gutterBottom
-          variant="h5"
-          component="div"
+      <Typography
+        sx={{ textAlign: "center" }}
+        gutterBottom
+        variant="h5"
+        component="div"
+      >
+        {name}
+      </Typography>
+      <Typography textAlign="center" variant="body1" color="grey">
+        {desc}
+      </Typography>
+      <Box display="flex" justifyContent="center">
+        <IconButton
+          onClick={() => {
+            window.open(githubLink, "_blank");
+          }}
+          sx={{ color: "black" }}
         >
-          {name}
-        </Typography>
-        <Typography align="center" variant="body2" color="text.secondary">
-          {desc}
-        </Typography>
-        <MainCard direction="row" center>
-          <Button
-            onClick={() => {
-              window.open(githubLink, "_blank");
-            }}
-            sx={{ color: "black" }}
-          >
-            <GitHubIcon />
-          </Button>
-          <Button
-            onClick={() => {
-              window.open(igLink, "_blank");
-            }}
-            sx={{ color: "black" }}
-          >
-            <InstagramIcon />
-          </Button>
-          <Button
-            onClick={() => {
-              window.open(linkedInLink, "_blank");
-            }}
-            sx={{ color: "black" }}
-          >
-            <LinkedInIcon />
-          </Button>
-        </MainCard>
-      </CardContent>
-    </Card>
+          <GitHubIcon />
+        </IconButton>
+        <IconButton
+          onClick={() => {
+            window.open(igLink, "_blank");
+          }}
+          sx={{ color: "black" }}
+        >
+          <InstagramIcon />
+        </IconButton>
+        <IconButton
+          onClick={() => {
+            window.open(linkedInLink, "_blank");
+          }}
+          sx={{ color: "black" }}
+        >
+          <LinkedInIcon />
+        </IconButton>
+      </Box>
+    </MainCard>
   );
 };
 
