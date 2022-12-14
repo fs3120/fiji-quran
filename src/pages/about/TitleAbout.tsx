@@ -1,11 +1,11 @@
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 
-type Props = {
+interface TitleAboutProps {
   title: string;
 };
 
-const TitleAbout = ({ title }: Props) => {
+const TitleAbout = ({ title }: TitleAboutProps) => {
   return (
     <>
       <Typography
