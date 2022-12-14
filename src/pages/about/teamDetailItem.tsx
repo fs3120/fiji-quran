@@ -35,12 +35,7 @@ const TeamDetailItem = ({
           borderRadius: "50%",
         }}
       />
-      <Typography
-        sx={{ textAlign: "center" }}
-        gutterBottom
-        variant="h5"
-        component="div"
-      >
+      <Typography textAlign="center" gutterBottom variant="h5" component="div">
         {name}
       </Typography>
       <Typography textAlign="center" variant="body1" color="grey">
