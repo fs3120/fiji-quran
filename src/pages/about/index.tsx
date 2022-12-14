@@ -1,23 +1,20 @@
 import MainCard from "../../components/MainCard";
 import PageWrapper from "../../components/PageWrapper";
-import { Container } from "@mui/material";
 import Divider from "@mui/material/Divider";
-import TitleAbout from "./title";
-import AboutDetail from "./aboutDetail";
-import TeamDetail from "./teamDetail";
+import TitleAbout from "./TitleAbout";
+import AboutDetail from "./AboutDetail";
+import TeamDetail from "./TeamDetail";
 
 export default function AboutPage() {
   return (
     <PageWrapper title="About">
       <MainCard>
-        <Container>
-          <TitleAbout title="About Us" />
-          <Divider variant="middle" />
-          <AboutDetail />
-          <TitleAbout title="Core Team" />
-          <Divider variant="middle" />
-          <TeamDetail/>
-        </Container>
+        <TitleAbout title="About Us" />
+        <Divider variant="middle" />
+        <AboutDetail />
+        <TitleAbout title="Core Team" />
+        <Divider variant="middle" />
+        <TeamDetail />
       </MainCard>
     </PageWrapper>
   );
