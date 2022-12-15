@@ -10,18 +10,18 @@ interface TeamDetailItemProps {
   name: string;
   desc: string;
   img: string;
-  githubLink: string;
-  igLink: string;
-  linkedInLink: string;
+  github: string;
+  ig: string;
+  linkedIn: string;
 }
 
 const TeamDetailItem = ({
   name,
   desc,
   img,
-  githubLink,
-  igLink,
-  linkedInLink,
+  github,
+  ig,
+  linkedIn,
 }: TeamDetailItemProps) => {
   return (
     <MainCard center sx={{ boxShadow: "0px 0px 10px 0px grey" }}>
@@ -44,7 +44,7 @@ const TeamDetailItem = ({
       <Box display="flex" justifyContent="center">
         <IconButton
           onClick={() => {
-            window.open(githubLink, "_blank");
+            window.open(github, "_blank");
           }}
           sx={{ color: "black" }}
         >
@@ -52,7 +52,7 @@ const TeamDetailItem = ({
         </IconButton>
         <IconButton
           onClick={() => {
-            window.open(igLink, "_blank");
+            window.open(ig, "_blank");
           }}
           sx={{ color: "black" }}
         >
@@ -60,7 +60,7 @@ const TeamDetailItem = ({
         </IconButton>
         <IconButton
           onClick={() => {
-            window.open(linkedInLink, "_blank");
+            window.open(linkedIn, "_blank");
           }}
           sx={{ color: "black" }}
         >
