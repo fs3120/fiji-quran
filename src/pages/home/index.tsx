@@ -10,8 +10,10 @@ export default function HomePage() {
   return (
     <PageWrapper title="Homepage">
       <MainCard center padding={7} gap={3}>
-        <Typography variant="h2">Selamat datang di Fiji Qur'an</Typography>
-        <Typography variant="h5" fontWeight="light">
+        <Typography variant="h2" textAlign="center">
+          Selamat datang di Fiji Qur'an
+        </Typography>
+        <Typography variant="h5" fontWeight="light" textAlign="center">
           Baca Al-Qur'an beserta tafsirnya dengan mudah
         </Typography>
         <MainCard center direction="row" gap={3}>
