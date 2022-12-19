@@ -7,6 +7,7 @@ import Tab from "@mui/material/Tab";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import Sidebar from "./Sidebar";
+import Button from "@mui/material/Button";
 
 const navbarItem = ["/", "/about"];
 
@@ -16,8 +17,14 @@ export default function Navbar() {
     <AppBar position="static" sx={{ backgroundColor: "#68B984" }}>
       <Toolbar>
         <Sidebar />
-        <AutoStoriesIcon sx={{ marginRight: 3 }} />
-        <Typography sx={{ letterSpacing: ".3rem" }}>Fiji Quran</Typography>
+        <Button
+          onClick={() => navigate("/")}
+          sx={{ color: "white" }}
+          disableRipple
+        >
+          <AutoStoriesIcon sx={{ marginRight: 3 }} />
+          <Typography sx={{ letterSpacing: ".3rem" }}>Fiji Quran</Typography>
+        </Button>
         <Tabs
           textColor="inherit"
           sx={{ marginLeft: "auto" }}
