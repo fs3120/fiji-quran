@@ -29,7 +29,8 @@ const TeamDetailItem = ({
         src={img}
         alt={name}
         style={{
-          padding: 20,
+          border: "5px solid #555",
+          margin:"20",
           height: "20vw",
           width: "20vw",
           borderRadius: "50%",
