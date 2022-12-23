@@ -13,16 +13,18 @@ interface CardSelectProps {
 export default function CardSelect({ logo, text, link }: CardSelectProps) {
   const navigate = useNavigate();
   return (
-    <Button
-      onClick={() => navigate(link)}
-      sx={{ color: "white" }}
-      disableRipple
-    >
+    <Button onClick={() => navigate(link)} sx={{ color: "white" }}>
       <MainCard
         center
         padding={4}
         gap={2}
-        sx={{ backgroundColor: "#68b883", borderRadius: 3, width: '17vw' }}
+        sx={{
+          backgroundColor: "#68b883",
+          borderRadius: 3,
+          width: "17vw",
+          height: "17vh",
+          justifyContent: "center",
+        }}
       >
         {logo}
         <Typography variant="h5" fontWeight="light" color="white">
