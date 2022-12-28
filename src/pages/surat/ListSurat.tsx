@@ -2,17 +2,7 @@ import MainCard from "../../components/MainCard";
 import { Button } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import useFetch from "../../utils/hook/useFetch";
-
-interface dataSurat {
-  nomor: number;
-  nama: string;
-  nama_latin: string;
-  jumlah_ayat: number;
-  tempat_turun: string;
-  arti: string;
-  deskripsi: string;
-  audio: string;
-}
+import { dataSurat } from "../../interfaces";
 
 const ListSurat = () => {
   const { data } = useFetch<dataSurat[]>({
