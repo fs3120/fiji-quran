@@ -1,8 +1,10 @@
 import MainCard from "../../components/MainCard";
 import { Button } from "@mui/material";
 import Typography from "@mui/material/Typography";
+import useFetch from "../../utils/useFetch";
 
-const ListSurat = ({ data }: any) => {
+const ListSurat = () => {
+  const { data } = useFetch("https://equran.id/api/surat");
   return (
     <MainCard
       direction="row"
