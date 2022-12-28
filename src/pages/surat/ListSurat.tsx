@@ -13,6 +13,7 @@ const ListSurat = ({ data }: any) => {
     >
       {data.map((data: any) => (
         <Button
+          key={data.nomor}
           color="secondary"
           variant="contained"
           sx={{ backgroundColor: "#68B984", width: "20vw", height: "10vh" }}
