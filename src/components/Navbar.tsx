@@ -28,7 +28,11 @@ export default function Navbar() {
         <Tabs
           textColor="inherit"
           sx={{ marginLeft: "auto" }}
-          value={navbarItem.findIndex((e) => e === location.pathname)}
+          value={
+            navbarItem.indexOf(location.pathname) === -1
+              ? 0
+              : navbarItem.indexOf(location.pathname)
+          }
           TabIndicatorProps={{ style: { backgroundColor: "transparent" } }}
         >
           <Tab onClick={() => navigate("/")} label="Home" />
