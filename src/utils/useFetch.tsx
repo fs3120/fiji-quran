@@ -1,19 +1,24 @@
 import { useEffect, useState } from "react";
 
-const useFetch = (url: string) => {
-  const [data, setData] = useState<any>([]);
+interface IUseFetch {
+  url: string;
+  log?: boolean;
+}
+
+export default function useFetch<T>({ url, log }: IUseFetch) {
+  const [data, setData] = useState<T | any>(null);
   useEffect(() => {
     fetch(url)
       .then((res) => {
         return res.json();
       })
       .then((data) => {
-        console.log(data);
+        if (log) {
+          console.log(data);
+        }
         setData(data);
       });
   }, []);
 
   return { data };
-};
-
-export default useFetch;
+}
