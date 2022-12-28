@@ -28,7 +28,7 @@ const ListSurat = () => {
       padding={5}
     >
       {data ? (
-        data.map((data: any) => (
+        data.map((data: dataSurat) => (
           <Button
             key={data.nomor}
             color="secondary"
