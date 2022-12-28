@@ -13,6 +13,7 @@ const navbarItem = ["/", "/about"];
 
 export default function Navbar() {
   const navigate = useNavigate();
+  const currentNavbar = navbarItem.indexOf(location.pathname);
   return (
     <AppBar position="static" sx={{ backgroundColor: "#68B984" }}>
       <Toolbar>
@@ -28,11 +29,7 @@ export default function Navbar() {
         <Tabs
           textColor="inherit"
           sx={{ marginLeft: "auto" }}
-          value={
-            navbarItem.indexOf(location.pathname) === -1
-              ? 0
-              : navbarItem.indexOf(location.pathname)
-          }
+          value={currentNavbar === -1 ? 0 : currentNavbar}
           TabIndicatorProps={{ style: { backgroundColor: "transparent" } }}
         >
           <Tab onClick={() => navigate("/")} label="Home" />
