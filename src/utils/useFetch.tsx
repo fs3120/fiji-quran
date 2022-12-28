@@ -1,9 +1,5 @@
 import { useEffect, useState } from "react";
 
-interface Data {
-  nama: string;
-}
-
 const useFetch = (url:string) => {
   const [data, setData] = useState<any>([]);
   useEffect(() => {
