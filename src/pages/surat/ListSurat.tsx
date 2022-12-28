@@ -1,7 +1,7 @@
 import MainCard from "../../components/MainCard";
 import { Button } from "@mui/material";
 import Typography from "@mui/material/Typography";
-import useFetch from "../../utils/useFetch";
+import useFetch from "../../utils/hook/useFetch";
 
 interface dataSurat {
   nomor: number;
