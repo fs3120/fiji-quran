@@ -1,8 +1,14 @@
 import MainCard from "../../components/MainCard";
-import { Button } from "@mui/material";
+import { Button, createTheme, ThemeProvider } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import useFetch from "../../utils/hook/useFetch";
 import { dataSurat } from "../../interfaces";
+
+const theme = createTheme({
+  typography: {
+    fontFamily: "Calibri",
+  },
+});
 
 const ListSurat = () => {
   const { data } = useFetch<dataSurat[]>({
@@ -25,9 +31,11 @@ const ListSurat = () => {
             variant="contained"
             sx={{ backgroundColor: "#68B984", width: "20vw", height: "10vh" }}
           >
-            <Typography>
-              {data.nomor}. {data.nama_latin} ({data.nama})
-            </Typography>
+            <ThemeProvider theme={theme}>
+              <Typography>
+                {data.nomor}. {data.nama_latin} ({data.nama})
+              </Typography>
+            </ThemeProvider>
           </Button>
         ))
       ) : (
