@@ -1,4 +1,5 @@
 import MainCard from "../../components/MainCard";
+import LoadingIndicator from "../../components/LoadingIndicator";
 import { Button } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import useFetch from "../../utils/hook/useFetch";
@@ -31,7 +32,7 @@ const ListSurat = () => {
           </Button>
         ))
       ) : (
-        <Typography variant="h4">Loading...</Typography>
+        <LoadingIndicator/>
       )}
     </MainCard>
   );
