@@ -6,6 +6,7 @@ import AboutPage from "./pages/about";
 import JuzPage from "./pages/juz";
 import SuratPage from "./pages/surat";
 import HalamanPage from "./pages/halaman";
+import AyatPage from "./pages/surat/ayat/AyatPage";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/surat",
         element: <SuratPage />,
+      },
+      {
+        path: "/surat/ayat",
+        element: <AyatPage />,
       },
       {
         path: "/halaman",
