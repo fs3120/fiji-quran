@@ -6,7 +6,7 @@ interface IUseFetch {
 }
 
 export default function useFetch<T>({ url, log }: IUseFetch) {
-  const [data, setData] = useState<T | any>(null);
+  const [data, setData] = useState<T>();
   useEffect(() => {
     fetch(url)
       .then((res) => {
