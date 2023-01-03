@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 
-interface IUseFetch {
+interface UseFetchProps {
   url: string;
   log?: boolean;
 }
 
-export default function useFetch<T>({ url, log }: IUseFetch) {
+export default function useFetch<T>({ url, log }: UseFetchProps) {
   const [data, setData] = useState<T>();
   useEffect(() => {
     fetch(url)
