@@ -1,4 +1,4 @@
-const AyatPage = () => {
+const DetailSurat = () => {
   return (
     <>
       <h1>
@@ -8,4 +8,4 @@ const AyatPage = () => {
   );
 };
 
-export default AyatPage;
+export default DetailSurat;
