@@ -20,5 +20,5 @@ export default function useFetch<T>({ url, log }: IUseFetch) {
       });
   }, []);
 
-  return { data };
+  return data;
 }

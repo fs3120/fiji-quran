@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 const ListSurat = () => {
   const navigate = useNavigate();
-  const { data } = useFetch<RAPISurat[]>({
+  const data = useFetch<RAPISurat[]>({
     url: "https://equran.id/api/surat",
     log: true,
   });
