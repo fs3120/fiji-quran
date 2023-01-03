@@ -1,4 +1,4 @@
-export interface dataSurat {
+export interface RAPISurat {
   nomor: number;
   nama: string;
   nama_latin: string;
