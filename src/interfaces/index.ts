@@ -32,6 +32,6 @@ interface SuratDetailBase {
 export interface RAPISuratDetail extends SuratDetailBase {
   status: boolean;
   ayat: RAPIAyat[];
-  surat_selanjutnya: SuratDetailBase;
-  surat_sebelumnya: boolean;
+  surat_selanjutnya: SuratDetailBase | boolean;
+  surat_sebelumnya: SuratDetailBase | boolean;
 }
