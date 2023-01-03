@@ -25,14 +25,14 @@ interface StringToHTMLProps {
 
 export default function StringToHTML({
   text,
-  variant = "body1",
+  variant,
   fontSize,
   fontWeight,
   sx,
 }: StringToHTMLProps) {
   return (
     <Typography
-      variant={variant}
+      variant={variant || "body1"}
       fontSize={fontSize}
       fontWeight={fontWeight}
       sx={sx}
