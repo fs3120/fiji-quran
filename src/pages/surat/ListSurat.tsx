@@ -4,8 +4,10 @@ import { Button } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import useFetch from "../../utils/hook/useFetch";
 import { dataSurat } from "../../interfaces";
+import { useNavigate } from "react-router-dom";
 
 const ListSurat = () => {
+  const navigate = useNavigate();
   const { data } = useFetch<dataSurat[]>({
     url: "https://equran.id/api/surat",
     log: true,
@@ -23,6 +25,7 @@ const ListSurat = () => {
           <Button
             key={data.nomor}
             color="secondary"
+            onClick={() => navigate(`${data.nomor}`)}
             variant="contained"
             sx={{ backgroundColor: "#68B984", width: "20vw", height: "10vh" }}
           >
