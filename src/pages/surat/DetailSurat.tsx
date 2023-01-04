@@ -3,7 +3,6 @@ import Typography from "@mui/material/Typography";
 import useFetch from "../../utils/hook/useFetch";
 import { RAPISuratDetail } from "../../interfaces";
 import MainCard from "../../components/MainCard";
-import StringToHTML from "../../components/StringToHTML";
 import LoadingIndicator from "../../components/LoadingIndicator";
 
 const DetailSurat = () => {
@@ -28,12 +27,12 @@ const DetailSurat = () => {
           <Typography variant="body1" fontSize={18} fontWeight={300}>
             Jumlah ayat: {data?.jumlah_ayat}
           </Typography>
-          <StringToHTML
+          <Typography
             variant="body1"
             fontSize={16}
             fontWeight={300}
-            text={data?.deskripsi || ""}
-            sx={{ textAlign: "center" }}
+            textAlign="center"
+            dangerouslySetInnerHTML={{ __html: data?.deskripsi }}
           />
         </>
       ) : (
