@@ -7,7 +7,6 @@ interface UseFetchProps {
 
 export default function useFetch<T>({ url, log }: UseFetchProps) {
   const [data, setData] = useState<T>();
-  console.log(url);
   useEffect(() => {
     fetch(url)
       .then((res) => {
