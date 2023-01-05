@@ -29,7 +29,7 @@ const ListSurat = () => {
             variant="contained"
             sx={{ backgroundColor: "#68B984", width: "20vw", height: "10vh" }}
           >
-            <Typography sx={{ fontFamily: "Calibri" }}>
+            <Typography fontSize="150%" fontFamily="Calibri">
               {data.nomor}. {data.nama_latin} ({data.nama})
             </Typography>
           </Button>
