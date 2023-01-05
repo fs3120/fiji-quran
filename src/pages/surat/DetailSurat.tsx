@@ -18,6 +18,7 @@ const DetailSurat = () => {
     <MainCard center gap={1} sx={{ paddingLeft: "10vw", paddingRight: "10vw" }}>
       <Box display="flex" width="100%" justifyContent="space-around">
         <Button
+          disabled={id === "1"}
           variant="contained"
           color="success"
           onClick={() => navigate(`/surat/${Number(id) - 1}`)}
@@ -28,6 +29,7 @@ const DetailSurat = () => {
           Daftar Surat
         </Button>
         <Button
+          disabled={id === "114"}
           variant="contained"
           color="success"
           onClick={() => navigate(`/surat/${Number(id) + 1}`)}
