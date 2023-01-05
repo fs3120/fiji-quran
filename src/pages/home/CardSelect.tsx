@@ -27,7 +27,7 @@ export default function CardSelect({ logo, text, link }: CardSelectProps) {
         }}
       >
         {logo}
-        <Typography variant="h5" fontWeight="light" color="white">
+        <Typography variant="h5" color="white">
           {text}
         </Typography>
       </MainCard>

@@ -42,19 +42,18 @@ const DetailSurat = () => {
           <Typography variant="h3" mt={5}>
             {data?.nama}
           </Typography>
-          <Typography variant="body1" fontSize={18} fontWeight={300}>
+          <Typography variant="body1" fontSize={18}>
             {data?.nomor}. ({data?.nama_latin} / {data?.arti})
           </Typography>
-          <Typography variant="body1" fontSize={18} fontWeight={300}>
+          <Typography variant="body1" fontSize={18}>
             Diturunkan di {data?.tempat_turun}
           </Typography>
-          <Typography variant="body1" fontSize={18} fontWeight={300}>
+          <Typography variant="body1" fontSize={18}>
             Jumlah ayat: {data?.jumlah_ayat}
           </Typography>
           <Typography
             variant="body1"
             fontSize={16}
-            fontWeight={300}
             textAlign="center"
             dangerouslySetInnerHTML={{ __html: data?.deskripsi }}
           />

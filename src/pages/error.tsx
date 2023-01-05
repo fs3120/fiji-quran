@@ -10,7 +10,7 @@ export default function ErrorPage() {
   return (
     <PageWrapper title="Page not found">
       <MainCard gap={2} center>
-        <Typography variant="h3" fontWeight={300} textAlign="center">Page not found</Typography>
+        <Typography variant="h3" textAlign="center">Page not found</Typography>
         <Button variant="contained" color="primary" onClick={() => navigate('/')}>
           Go back to home
         </Button>
