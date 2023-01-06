@@ -11,6 +11,7 @@ function fetchAPI(input: RequestInfo | URL, init?: RequestInit | undefined) {
 
 export default function useFetch<T>({ url, log }: UseFetchProps) {
   return useSWR<T>(url, fetchAPI, {
+    revalidateOnFocus: false,
     onSuccess: (data) => {
       if (log) {
         console.log(data);
