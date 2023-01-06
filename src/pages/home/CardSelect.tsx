@@ -21,8 +21,8 @@ export default function CardSelect({ logo, text, link }: CardSelectProps) {
         sx={{
           backgroundColor: "#68b883",
           borderRadius: 3,
-          width: "17vw",
-          height: "17vh",
+          width: "15em",
+          height: "5em",
           justifyContent: "center",
         }}
       >
