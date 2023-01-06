@@ -30,10 +30,6 @@ const DetailSurat = () => {
     url: `https://equran.id/api/tafsir/${id}`,
   });
 
-  if (!dataSurat && !dataTafsir) {
-    return <LoadingIndicator />;
-  }
-
   const data = dataSurat?.ayat.map(
     (ayat) =>
       dataTafsir?.tafsir
@@ -63,35 +59,41 @@ const DetailSurat = () => {
         gap={1}
         sx={{ paddingLeft: "10vw", paddingRight: "10vw" }}
       >
-        <SuratHeader id={id} />
-        <Typography variant="h3" mt={5}>
-          {dataSurat?.nama}
-        </Typography>
-        <Typography variant="body1">
-          {dataSurat?.nomor}. ({dataSurat?.nama_latin} / {dataSurat?.arti})
-        </Typography>
-        <Typography variant="body1">
-          Diturunkan di {dataSurat?.tempat_turun}
-        </Typography>
-        <Typography variant="body1">
-          Jumlah ayat: {dataSurat?.jumlah_ayat}
-        </Typography>
-        <Typography
-          variant="body1"
-          textAlign="center"
-          dangerouslySetInnerHTML={{ __html: dataSurat?.deskripsi || "" }}
-        />
-        {data?.map((data, index) => (
-          <Ayat
-            setTafsirContent={setTafsirContent}
-            setTafsirOpen={setTafsirOpen}
-            arab={data?.arab || ""}
-            nomor={`${data?.nomor}`}
-            arti={data?.arti || ""}
-            key={index}
-            tafsir={data?.tafsir || ""}
-          />
-        ))}
+        {dataSurat && dataTafsir ? (
+          <>
+            <SuratHeader id={id} />
+            <Typography variant="h3" mt={5}>
+              {dataSurat?.nama}
+            </Typography>
+            <Typography variant="body1">
+              {dataSurat?.nomor}. ({dataSurat?.nama_latin} / {dataSurat?.arti})
+            </Typography>
+            <Typography variant="body1">
+              Diturunkan di {dataSurat?.tempat_turun}
+            </Typography>
+            <Typography variant="body1">
+              Jumlah ayat: {dataSurat?.jumlah_ayat}
+            </Typography>
+            <Typography
+              variant="body1"
+              textAlign="center"
+              dangerouslySetInnerHTML={{ __html: dataSurat?.deskripsi || "" }}
+            />
+            {data?.map((data, index) => (
+              <Ayat
+                setTafsirContent={setTafsirContent}
+                setTafsirOpen={setTafsirOpen}
+                arab={data?.arab || ""}
+                nomor={`${data?.nomor}`}
+                arti={data?.arti || ""}
+                key={index}
+                tafsir={data?.tafsir || ""}
+              />
+            ))}
+          </>
+        ) : (
+          <LoadingIndicator />
+        )}
       </MainCard>
     </PageWrapper>
   );
