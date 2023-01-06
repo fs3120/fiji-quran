@@ -24,10 +24,14 @@ const ListSurat = () => {
         data.map((data: RAPISurat) => (
           <Button
             key={data.nomor}
-            color="secondary"
             onClick={() => navigate(`${data.nomor}`)}
             variant="contained"
-            sx={{ backgroundColor: "#68B984", width: "20vw", height: "10vh" }}
+            sx={{
+              backgroundColor: "#68B984",
+              width: "20vw",
+              height: "10vh",
+              ":hover": { backgroundColor: "#3e8055" },
+            }}
           >
             <Typography fontSize="150%" fontFamily="Calibri">
               {data.nomor}. {data.nama_latin} ({data.nama})
