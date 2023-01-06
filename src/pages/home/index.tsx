@@ -13,7 +13,7 @@ export default function HomePage() {
         <Typography color={"#68B984"} variant="h2" textAlign="center">
           Selamat datang di Fiji Qur'an
         </Typography>
-        <Typography color={"grey"} variant="h5" fontWeight="light" textAlign="center">
+        <Typography color={"grey"} variant="h5" textAlign="center">
           Baca Al-Qur'an beserta tafsirnya dengan mudah
         </Typography>
         <MainCard center direction="row" gap={3}>

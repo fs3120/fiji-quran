@@ -65,7 +65,6 @@ export default function Sidebar() {
           <Typography
             variant="h5"
             sx={{ letterSpacing: ".3rem" }}
-            fontWeight="regular"
             color="grey"
             mb={1}
           >

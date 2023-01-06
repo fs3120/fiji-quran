@@ -3,10 +3,12 @@ import LoadingIndicator from "../../components/LoadingIndicator";
 import { Button } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import useFetch from "../../utils/hook/useFetch";
-import { dataSurat } from "../../interfaces";
+import { RAPISurat } from "../../interfaces";
+import { useNavigate } from "react-router-dom";
 
 const ListSurat = () => {
-  const { data } = useFetch<dataSurat[]>({
+  const navigate = useNavigate();
+  const { data } = useFetch<RAPISurat[]>({
     url: "https://equran.id/api/surat",
     log: true,
   });
@@ -19,14 +21,19 @@ const ListSurat = () => {
       padding={5}
     >
       {data ? (
-        data.map((data: dataSurat) => (
+        data.map((data: RAPISurat) => (
           <Button
             key={data.nomor}
-            color="secondary"
+            onClick={() => navigate(`${data.nomor}`)}
             variant="contained"
-            sx={{ backgroundColor: "#68B984", width: "20vw", height: "10vh" }}
+            sx={{
+              backgroundColor: "#68B984",
+              width: "20vw",
+              height: "10vh",
+              ":hover": { backgroundColor: "#3e8055" },
+            }}
           >
-            <Typography sx={{ fontFamily: "Calibri" }}>
+            <Typography fontSize="150%" fontFamily="Calibri">
               {data.nomor}. {data.nama_latin} ({data.nama})
             </Typography>
           </Button>
