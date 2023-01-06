@@ -9,6 +9,7 @@ interface MainCardProps {
   sx?: SxProps<Theme> | undefined;
   padding?: number;
   gap?: number;
+  wrap?: boolean;
   direction?: "row" | "column";
   transparent?: boolean;
 }
@@ -20,6 +21,7 @@ export default function MainCard({
   sx,
   padding,
   gap,
+  wrap,
   direction,
   transparent,
 }: MainCardProps) {
@@ -29,6 +31,7 @@ export default function MainCard({
       flexDirection={direction || "column"}
       alignItems={center && direction !== "row" ? "center" : "normal"}
       justifyContent={center && direction === "row" ? "center" : "normal"}
+      flexWrap={wrap ? "wrap" : "nowrap"}
       gap={gap || 0}
       sx={{
         padding: padding || 2,
