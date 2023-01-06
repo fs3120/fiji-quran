@@ -7,6 +7,7 @@ import LoadingIndicator from "../../components/LoadingIndicator";
 import Ayat from "./Ayat";
 import SuratHeader from "./SuratHeader";
 import ErrorPage from "../error";
+import PageWrapper from "../../components/PageWrapper";
 
 const DetailSurat = () => {
   const { id } = useParams();
@@ -21,40 +22,46 @@ const DetailSurat = () => {
   });
 
   return (
-    <MainCard center gap={1} sx={{ paddingLeft: "10vw", paddingRight: "10vw" }}>
-      <SuratHeader id={id} />
-      {data ? (
-        <>
-          <Typography variant="h3" mt={5}>
-            {data?.nama}
-          </Typography>
-          <Typography variant="body1">
-            {data?.nomor}. ({data?.nama_latin} / {data?.arti})
-          </Typography>
-          <Typography variant="body1">
-            Diturunkan di {data?.tempat_turun}
-          </Typography>
-          <Typography variant="body1">
-            Jumlah ayat: {data?.jumlah_ayat}
-          </Typography>
-          <Typography
-            variant="body1"
-            textAlign="center"
-            dangerouslySetInnerHTML={{ __html: data?.deskripsi }}
-          />
-          {data?.ayat.map((ayat, index) => (
-            <Ayat
-              arab={ayat.ar}
-              nomor={`${ayat.nomor}`}
-              arti={ayat.idn}
-              key={index}
+    <PageWrapper title="Detail Surat">
+      <MainCard
+        center
+        gap={1}
+        sx={{ paddingLeft: "10vw", paddingRight: "10vw" }}
+      >
+        <SuratHeader id={id} />
+        {data ? (
+          <>
+            <Typography variant="h3" mt={5}>
+              {data?.nama}
+            </Typography>
+            <Typography variant="body1">
+              {data?.nomor}. ({data?.nama_latin} / {data?.arti})
+            </Typography>
+            <Typography variant="body1">
+              Diturunkan di {data?.tempat_turun}
+            </Typography>
+            <Typography variant="body1">
+              Jumlah ayat: {data?.jumlah_ayat}
+            </Typography>
+            <Typography
+              variant="body1"
+              textAlign="center"
+              dangerouslySetInnerHTML={{ __html: data?.deskripsi }}
             />
-          ))}
-        </>
-      ) : (
-        <LoadingIndicator />
-      )}
-    </MainCard>
+            {data?.ayat.map((ayat, index) => (
+              <Ayat
+                arab={ayat.ar}
+                nomor={`${ayat.nomor}`}
+                arti={ayat.idn}
+                key={index}
+              />
+            ))}
+          </>
+        ) : (
+          <LoadingIndicator />
+        )}
+      </MainCard>
+    </PageWrapper>
   );
 };
 
