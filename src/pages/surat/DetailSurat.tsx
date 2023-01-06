@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Typography from "@mui/material/Typography";
 import useFetch from "../../utils/hook/useFetch";
 import { RAPISuratDetail } from "../../interfaces";
