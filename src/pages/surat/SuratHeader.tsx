@@ -9,9 +9,10 @@ export default function SuratHeader({ id }: { id: string }) {
     <AppBar
       position="sticky"
       sx={{
-        backgroundColor: "transparent",
+        backgroundColor: "white",
         boxShadow: "0",
         paddingTop: "10px",
+        paddingBottom: "10px",
       }}
     >
       <Box
