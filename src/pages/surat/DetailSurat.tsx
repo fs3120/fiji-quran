@@ -15,7 +15,7 @@ import { useState } from "react";
 const DetailSurat = () => {
   const { id } = useParams();
 
-  if (id === undefined || isNaN(+id) || +id < 1 || +id > 114) {
+  if (!id || isNaN(+id) || +id < 1 || +id > 114) {
     return <ErrorPage />;
   }
 
