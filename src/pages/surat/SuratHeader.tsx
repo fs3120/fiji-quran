@@ -26,7 +26,7 @@ export default function SuratHeader({ id }: { id: string }) {
       >
         <Button
           startIcon={<ArrowBackIcon />}
-          disabled={id === "114"}
+          disabled={id === "1"}
           variant="contained"
           color="success"
           onClick={() => navigate(`/surat/${+id - 1}`)}
