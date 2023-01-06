@@ -28,7 +28,6 @@ export default function SuratHeader({ id }: { id: string }) {
           startIcon={<ArrowBackIcon />}
           disabled={id === "1"}
           variant="contained"
-          color="success"
           onClick={() => navigate(`/surat/${+id - 1}`)}
           sx={{
             backgroundColor: "#68B984",
@@ -48,7 +47,6 @@ export default function SuratHeader({ id }: { id: string }) {
           endIcon={<ArrowForwardIcon />}
           disabled={id === "114"}
           variant="contained"
-          color="success"
           onClick={() => navigate(`/surat/${+id + 1}`)}
           sx={{
             backgroundColor: "#68B984",
