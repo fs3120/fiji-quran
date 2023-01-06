@@ -10,7 +10,6 @@ const ListSurat = () => {
   const navigate = useNavigate();
   const { data } = useFetch<RAPISurat[]>({
     url: "https://equran.id/api/surat",
-    log: true,
   });
   return (
     <MainCard
