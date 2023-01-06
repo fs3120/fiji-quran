@@ -28,7 +28,6 @@ const DetailSurat = () => {
 
   const { data: dataTafsir } = useFetch<RAPITafsirDetail>({
     url: `https://equran.id/api/tafsir/${id}`,
-    log: true,
   });
 
   if (!dataSurat && !dataTafsir) {
