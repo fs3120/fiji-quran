@@ -1,10 +1,10 @@
 import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
 import ListIcon from "@mui/icons-material/List";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import MainCard from "../../components/MainCard";
 
 export default function SuratHeader({ id }: { id: string }) {
   const navigate = useNavigate();
@@ -18,12 +18,7 @@ export default function SuratHeader({ id }: { id: string }) {
         paddingBottom: "10px",
       }}
     >
-      <Box
-        display="flex"
-        width="100%"
-        justifyContent="space-around"
-        position="sticky"
-      >
+      <MainCard direction="row" gap={2} wrap sx={{ justifyContent: "space-around" }}>
         <Button
           startIcon={<ArrowBackIcon />}
           disabled={id === "1"}
@@ -55,7 +50,7 @@ export default function SuratHeader({ id }: { id: string }) {
         >
           Surat Selanjutnya
         </Button>
-      </Box>
+      </MainCard>
     </AppBar>
   );
 }
