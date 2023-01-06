@@ -9,9 +9,7 @@ export default function useFetch<T>({ url, log }: UseFetchProps) {
   const [data, setData] = useState<T>();
   useEffect(() => {
     fetch(url)
-      .then((res) => {
-        return res.json();
-      })
+      .then((res) => res.json())
       .then((data) => {
         if (log) {
           console.log(data);
