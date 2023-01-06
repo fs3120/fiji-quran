@@ -12,13 +12,7 @@ const ListSurat = () => {
     url: "https://equran.id/api/surat",
   });
   return (
-    <MainCard
-      direction="row"
-      sx={{ flexWrap: "wrap", justifyContent: "center" }}
-      center
-      gap={2}
-      padding={5}
-    >
+    <MainCard direction="row" wrap center gap={2} padding={5}>
       {data ? (
         data.map((data: RAPISurat) => (
           <Button
@@ -27,12 +21,12 @@ const ListSurat = () => {
             variant="contained"
             sx={{
               backgroundColor: "#68B984",
-              width: "20vw",
-              height: "10vh",
+              width: "20em",
+              height: "5em",
               ":hover": { backgroundColor: "#3e8055" },
             }}
           >
-            <Typography fontSize="150%" fontFamily="Calibri">
+            <Typography fontSize="1.5em" fontFamily="Calibri">
               {data.nomor}. {data.nama_latin} ({data.nama})
             </Typography>
           </Button>
