@@ -1,11 +1,9 @@
 import { useParams } from "react-router-dom";
-
 import Typography from "@mui/material/Typography";
 import useFetch from "../../utils/hook/useFetch";
 import { RAPISuratDetail } from "../../interfaces";
 import MainCard from "../../components/MainCard";
 import LoadingIndicator from "../../components/LoadingIndicator";
-
 import Ayat from "./Ayat";
 import SuratHeader from "./SuratHeader";
 import ErrorPage from "../error";
