@@ -10,7 +10,7 @@ const TeamDetail = () => {
         <TeamDetailItem
           name="Muhammad Nurfajri Rahman"
           desc="Fresh Graduate Teknik Informatika UIN Syarif Hidayatullah Jakarta. Memiliki Passion dalam Web Development"
-          img="images/xiao.jpg"
+          img="images/xiao.png"
           github="https://github.com/Fyn-x"
           linkedIn="https://www.linkedin.com/in/mnurfajrirahman/"
           ig="https://www.instagram.com/m_nfajri_r/"
