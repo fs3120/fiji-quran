@@ -18,7 +18,7 @@ export interface RAPIAyat {
   idn: string;
 }
 
-interface SuratDetailBase {
+interface EDevQuranBase {
   nomor: number;
   nama: string;
   nama_latin: string;
@@ -29,9 +29,21 @@ interface SuratDetailBase {
   audio: string;
 }
 
-export interface RAPISuratDetail extends SuratDetailBase {
+interface TafsirBase {
+  id: number;
+  surah: number;
+  ayat: number;
+  tafsir: string;
+}
+
+export interface RAPISuratDetail extends EDevQuranBase {
   status: boolean;
   ayat: RAPIAyat[];
-  surat_selanjutnya: SuratDetailBase | boolean;
-  surat_sebelumnya: SuratDetailBase | boolean;
+  surat_selanjutnya: EDevQuranBase | boolean;
+  surat_sebelumnya: EDevQuranBase | boolean;
+}
+
+export interface RAPITafsirDetail extends EDevQuranBase {
+  status: boolean;
+  tafsir: TafsirBase[];
 }
