@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+
 import Typography from "@mui/material/Typography";
 import useFetch from "../../utils/hook/useFetch";
 import { RAPISuratDetail } from "../../interfaces";
@@ -11,14 +12,15 @@ import ErrorPage from "../error";
 
 const DetailSurat = () => {
   const { id } = useParams();
-  const data = useFetch<RAPISuratDetail>({
-    url: `https://equran.id/api/surat/${id}`,
-    log: true,
-  });
 
   if (id === undefined || +id < 1 || +id > 114) {
     return <ErrorPage />;
   }
+
+  const { data } = useFetch<RAPISuratDetail>({
+    url: `https://equran.id/api/surat/${id}`,
+    log: true,
+  });
 
   return (
     <MainCard center gap={1} sx={{ paddingLeft: "10vw", paddingRight: "10vw" }}>
