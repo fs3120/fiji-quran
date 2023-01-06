@@ -16,7 +16,7 @@ export default function HomePage() {
         <Typography color={"grey"} variant="h5" textAlign="center">
           Baca Al-Qur'an beserta tafsirnya dengan mudah
         </Typography>
-        <MainCard center direction="row" gap={3}>
+        <MainCard center direction="row" wrap gap={3}>
           <CardSelect
             logo={<BookmarksIcon sx={{ color: "white" }} />}
             text="Baca Per Juz"
