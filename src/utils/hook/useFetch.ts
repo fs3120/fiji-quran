@@ -5,7 +5,7 @@ interface UseFetchProps {
   log?: boolean;
 }
 
-async function fetchAPI(input: any, init: any) {
+async function fetchAPI(input: RequestInfo | URL, init?: RequestInit) {
   const res = await fetch(input, init);
   return await res.json();
 }
