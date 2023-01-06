@@ -7,6 +7,7 @@ import LoadingIndicator from "../../components/LoadingIndicator";
 
 import Ayat from "./Ayat";
 import SuratHeader from "./SuratHeader";
+import ErrorPage from "../error";
 
 const DetailSurat = () => {
   const { id } = useParams();
@@ -14,8 +15,14 @@ const DetailSurat = () => {
     url: `https://equran.id/api/surat/${id}`,
     log: true,
   });
+
+  if (id === undefined || +id < 1 || +id > 114) {
+    return <ErrorPage />;
+  }
+
   return (
     <MainCard center gap={1} sx={{ paddingLeft: "10vw", paddingRight: "10vw" }}>
+      <SuratHeader id={id} />
       {data ? (
         <>
           <Typography variant="h3" mt={5}>
