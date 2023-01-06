@@ -1,22 +1,20 @@
-import { useEffect, useState } from "react";
+import useSWR from "swr";
 
 interface UseFetchProps {
   url: string;
   log?: boolean;
 }
 
-export default function useFetch<T>({ url, log }: UseFetchProps) {
-  const [data, setData] = useState<T>();
-  useEffect(() => {
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => {
-        if (log) {
-          console.log(data);
-        }
-        setData(data);
-      });
-  }, [url]);
+function fetchAPI(input: RequestInfo | URL, init?: RequestInit | undefined) {
+  return fetch(input, init).then((res) => res.json());
+}
 
-  return data;
+export default function useFetch<T>({ url, log }: UseFetchProps) {
+  return useSWR<T>(url, fetchAPI, {
+    onSuccess: (data) => {
+      if (log) {
+        console.log(data);
+      }
+    },
+  });
 }
