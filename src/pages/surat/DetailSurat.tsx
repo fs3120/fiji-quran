@@ -54,11 +54,7 @@ const DetailSurat = () => {
           <Typography variant="body1">{tafsirContent}</Typography>
         </DialogContent>
       </Dialog>
-      <MainCard
-        center
-        gap={1}
-        sx={{ paddingLeft: "10vw", paddingRight: "10vw" }}
-      >
+      <MainCard center gap={1} sx={{ paddingLeft: "3em", paddingRight: "3em" }}>
         {dataSurat && dataTafsir ? (
           <>
             <SuratHeader id={id} />
