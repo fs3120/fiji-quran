@@ -23,7 +23,7 @@ export default function Ayat({
   setTafsirContent,
 }: AyatProps) {
   return (
-    <MainCard sx={{ width: "100%" }}>
+    <MainCard sx={{ width: "90vw" }}>
       <Typography dir="rtl" variant="h4">
         {arab}
       </Typography>
