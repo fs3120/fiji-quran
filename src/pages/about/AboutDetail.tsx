@@ -9,8 +9,8 @@ const AboutDetail = () => {
         variant="body1"
         textAlign="center"
         fontSize="1.3rem"
-        pl={10}
-        pr={10}
+        pl={5}
+        pr={5}
         mt={2}
         color="grey"
       >

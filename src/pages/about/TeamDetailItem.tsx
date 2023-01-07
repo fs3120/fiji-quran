@@ -24,15 +24,15 @@ const TeamDetailItem = ({
   linkedIn,
 }: TeamDetailItemProps) => {
   return (
-    <MainCard center sx={{ boxShadow: "0px 0px 10px 0px grey" }}>
+    <MainCard center sx={{ boxShadow: "0px 0px 10px 0px grey", width: '20em' }}>
       <img
         src={img}
         alt={name}
         style={{
           border: "5px solid #555",
           margin:"20",
-          height: "20vw",
-          width: "20vw",
+          height: "17em",
+          width: "17em",
           borderRadius: "50%",
         }}
       />

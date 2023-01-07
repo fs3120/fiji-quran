@@ -6,7 +6,7 @@ const TeamDetail = () => {
   return (
     <>
       <TitleAbout title="Core Team" />
-      <MainCard padding={7} center gap={10} direction="row">
+      <MainCard padding={5} center gap={5} wrap direction="row">
         <TeamDetailItem
           name="Muhammad Nurfajri Rahman"
           desc="Fresh Graduate Teknik Informatika UIN Syarif Hidayatullah Jakarta. Memiliki Passion dalam Web Development"
