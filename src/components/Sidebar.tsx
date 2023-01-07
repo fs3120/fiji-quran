@@ -8,32 +8,52 @@ import Button from "@mui/material/Button";
 import MenuIcon from "@mui/icons-material/Menu";
 import Drawer from "@mui/material/Drawer";
 import ListItemIcon from "@mui/material/ListItemIcon";
-import BookmarksIcon from "@mui/icons-material/Bookmarks";
-import MenuBookIcon from "@mui/icons-material/MenuBook";
-import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import { useNavigate } from "react-router-dom";
+import HomeIcon from "@mui/icons-material/Home";
+import InfoIcon from "@mui/icons-material/Info";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import BookmarksIcon from "@mui/icons-material/Bookmarks";
+import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
+import MenuBookIcon from "@mui/icons-material/MenuBook";
 
-type TMenuListItem = [string, ReactNode, string];
+type TMenuListItem = [string, ReactNode, string, boolean];
+
+const PageListsItem: TMenuListItem[] = [
+  ["Home", <HomeIcon sx={{ color: "#68b883" }} />, "/", false],
+  ["About", <InfoIcon sx={{ color: "#68b883" }} />, "/about", false],
+  [
+    "Github",
+    <GitHubIcon sx={{ color: "#68b883" }} />,
+    "https://github.com/fikrisyahid/fiji-quran",
+    true,
+  ],
+];
 
 const menuListsItem: TMenuListItem[] = [
-  ["Juz", <BookmarksIcon sx={{ color: "#68b883" }} />, "/juz"],
-  ["Surat", <LibraryBooksIcon sx={{ color: "#68b883" }} />, "/surat"],
-  ["Halaman", <MenuBookIcon sx={{ color: "#68b883" }} />, "/halaman"],
+  ["Juz", <BookmarksIcon sx={{ color: "#68b883" }} />, "/juz", false],
+  ["Surat", <LibraryBooksIcon sx={{ color: "#68b883" }} />, "/surat", false],
+  ["Halaman", <MenuBookIcon sx={{ color: "#68b883" }} />, "/halaman", false],
 ];
 
 export default function Sidebar() {
   const navigate = useNavigate();
   const [drawerOpen, setDrawerOpen] = useState(false);
 
-  const MenuLists = () => (
+  const generateItem = (lists: TMenuListItem[]) => (
     <Box onClick={() => setDrawerOpen(false)} sx={{ width: "15rem" }}>
       <List>
-        {menuListsItem.map((item, index) => (
+        {lists.map((item, index) => (
           <ListItem
-            onClick={() => navigate(item[2])}
+            onClick={() => {
+              if (item[3]) {
+                window.open(item[2], "_blank");
+              } else {
+                navigate(item[2]);
+              }
+            }}
             key={index}
             disablePadding
           >
@@ -71,7 +91,9 @@ export default function Sidebar() {
             Fiji Quran
           </Typography>
           <Divider sx={{ width: "75%" }} />
-          <MenuLists />
+          {generateItem(PageListsItem)}
+          <Divider sx={{ width: "75%" }} />
+          {generateItem(menuListsItem)}
         </Box>
       </Drawer>
     </>
