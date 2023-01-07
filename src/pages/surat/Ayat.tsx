@@ -8,6 +8,7 @@ interface AyatProps {
   arti: string;
   nomor: string;
   tafsir: string;
+  audio: string;
   setTafsirOpen: Dispatch<SetStateAction<boolean>>;
   setTafsirContent: Dispatch<SetStateAction<string>>;
 }
@@ -17,18 +18,26 @@ export default function Ayat({
   arti,
   nomor,
   tafsir,
+  audio,
   setTafsirOpen,
   setTafsirContent,
 }: AyatProps) {
   return (
-    <MainCard sx={{ justifyContent: "end", width: "100%" }} padding={0}>
+    <MainCard sx={{ width: "100%" }}>
       <Typography dir="rtl" variant="h4">
         {arab}
       </Typography>
       <Typography variant="body1">
         {nomor}. {arti}
       </Typography>
-      <MainCard direction="row">
+      <MainCard
+        direction="row"
+        gap={2}
+        wrap
+        center
+        sx={{ alignItems: "center" }}
+      >
+        <audio preload="none" controls src={audio} />
         <Button
           variant="contained"
           onClick={() => {
@@ -36,6 +45,8 @@ export default function Ayat({
             setTafsirOpen(true);
           }}
           sx={{
+            marginTop: 2,
+            marginBottom: 2,
             backgroundColor: "#68B984",
             ":hover": { backgroundColor: "#3e8055" },
           }}
