@@ -1,49 +1,82 @@
-export interface RAPISurat {
-  nomor: number;
-  nama: string;
-  nama_latin: string;
-  jumlah_ayat: number;
-  tempat_turun: string;
-  arti: string;
-  deskripsi: string;
-  audio: string;
+export interface RAPI {
+  code: number;
+  status: string;
+  message: string;
+  data: any;
 }
 
-export interface RAPIAyat {
-  id: number;
-  surah: number;
-  nomor: number;
-  ar: string;
-  tr: string;
-  idn: string;
+export interface IVerses {
+  number: {
+    inQuran: number;
+    inSurah: number;
+  };
+  meta: {
+    juz: number;
+    page: number;
+    manzil: number;
+    ruku: number;
+    hizbQuarter: number;
+    sajda: {
+      recommended: boolean;
+      obligatory: boolean;
+    };
+  };
+  text: {
+    arab: string;
+    transliteration: {
+      en: string;
+    };
+  };
+  translation: {
+    en: string;
+    id: string;
+  };
+  audio: {
+    primary: string;
+    secondary: string[];
+  };
+  tafsir: {
+    id: {
+      short: string;
+      long: string;
+    };
+  };
 }
 
-interface EDevQuranBase {
-  nomor: number;
-  nama: string;
-  nama_latin: string;
-  jumlah_ayat: number;
-  tempat_turun: string;
-  arti: string;
-  deskripsi: string;
-  audio: string;
+export interface ISurah {
+  number: number;
+  sequence: number;
+  numberOfVerses: number;
+  name: {
+    short: string;
+    long: string;
+    transliteration: {
+      en: string;
+      id: string;
+    };
+    translation: {
+      en: string;
+      id: string;
+    };
+  };
+  revelation: {
+    arab: string;
+    en: string;
+    id: string;
+  };
+  tafsir: {
+    id: string;
+  };
 }
 
-interface TafsirBase {
-  id: number;
-  surah: number;
-  ayat: number;
-  tafsir: string;
+export interface ISurahDetail extends ISurah {
+  verses: IVerses[];
 }
 
-export interface RAPISuratDetail extends EDevQuranBase {
-  status: boolean;
-  ayat: RAPIAyat[];
-  surat_selanjutnya: EDevQuranBase | boolean;
-  surat_sebelumnya: EDevQuranBase | boolean;
+export interface RAPISurah extends RAPI {
+  data: ISurah[];
 }
 
-export interface RAPITafsirDetail extends EDevQuranBase {
-  status: boolean;
-  tafsir: TafsirBase[];
+export interface RAPISurahDetail extends RAPI {
+  data: ISurahDetail;
 }
