@@ -3,21 +3,23 @@ import LoadingIndicator from "../../components/LoadingIndicator";
 import { Button } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import useFetch from "../../utils/hook/useFetch";
-import { RAPISurat } from "../../interfaces";
 import { useNavigate } from "react-router-dom";
+import { ISurah, RAPISurah } from "../../interfaces";
 
 const ListSurat = () => {
   const navigate = useNavigate();
-  const { data } = useFetch<RAPISurat[]>({
-    url: "https://equran.id/api/surat",
+
+  const { data } = useFetch<RAPISurah>({
+    url: "https://quran-api-black.vercel.app/surah/",
   });
+
   return (
     <MainCard direction="row" wrap center gap={2} padding={5}>
-      {data ? (
-        data.map((data: RAPISurat) => (
+      {data?.code === 200 ? (
+        data?.data?.map((data: ISurah) => (
           <Button
-            key={data.nomor}
-            onClick={() => navigate(`${data.nomor}`)}
+            key={data?.number}
+            onClick={() => navigate(`${data?.number}`)}
             variant="contained"
             sx={{
               backgroundColor: "#68B984",
@@ -27,7 +29,8 @@ const ListSurat = () => {
             }}
           >
             <Typography fontSize="1.5em" fontFamily="Calibri">
-              {data.nomor}. {data.nama_latin} ({data.nama})
+              {data?.number}. {data?.name?.transliteration?.id} (
+              {data?.name?.short})
             </Typography>
           </Button>
         ))
