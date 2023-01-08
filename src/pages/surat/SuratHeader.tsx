@@ -12,7 +12,7 @@ export default function SuratHeader({ id }: { id: string }) {
     <AppBar
       position="sticky"
       sx={{
-        width: "100vw",
+        width: "95vw",
         boxShadow: "0",
       }}
     >
