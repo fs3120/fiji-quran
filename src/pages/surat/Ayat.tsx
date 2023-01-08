@@ -24,7 +24,7 @@ export default function Ayat({
 }: AyatProps) {
   const playNext = () => {
     const allAudio = document.getElementsByTagName("audio");
-    if (+nomor + 1 == allAudio.length) {
+    if (+nomor + 1 <= allAudio.length) {
       allAudio[+nomor].play();
       allAudio[+nomor].scrollIntoView({
         behavior: "auto",
