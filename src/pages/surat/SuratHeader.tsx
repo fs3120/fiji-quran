@@ -12,13 +12,16 @@ export default function SuratHeader({ id }: { id: string }) {
     <AppBar
       position="sticky"
       sx={{
-        backgroundColor: "white",
+        width: "100vw",
         boxShadow: "0",
-        paddingTop: "10px",
-        paddingBottom: "10px",
       }}
     >
-      <MainCard direction="row" gap={2} wrap sx={{ justifyContent: "space-around" }}>
+      <MainCard
+        direction="row"
+        gap={2}
+        wrap
+        sx={{ justifyContent: "space-around" }}
+      >
         <Button
           startIcon={<ArrowBackIcon />}
           disabled={id === "1"}
