@@ -22,6 +22,12 @@ export default function Ayat({
   setTafsirOpen,
   setTafsirContent,
 }: AyatProps) {
+  const playNext = () => {
+    const allAudio = document.getElementsByTagName("audio");
+    if (+nomor + 1 < allAudio.length) {
+      allAudio[+nomor].play();
+    }
+  };
   return (
     <MainCard sx={{ width: "90vw" }}>
       <Typography dir="rtl" variant="h4">
@@ -37,7 +43,13 @@ export default function Ayat({
         center
         sx={{ alignItems: "center" }}
       >
-        <audio preload="none" controls src={audio} />
+        <audio
+          id={`audio${+nomor}`}
+          onEnded={playNext}
+          preload="none"
+          controls
+          src={audio}
+        />
         <Button
           variant="contained"
           onClick={() => {
