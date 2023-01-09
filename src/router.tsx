@@ -7,6 +7,7 @@ import JuzPage from "./pages/juz";
 import SuratPage from "./pages/surat";
 import HalamanPage from "./pages/halaman";
 import DetailSurat from "./pages/surat/DetailSurat";
+import DetailJuz from "./pages/juz/DetailJuz";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "/juz",
         element: <JuzPage />,
+      },
+      {
+        path: "/juz/:id",
+        element: <DetailJuz />,
       },
       {
         path: "/surat",
