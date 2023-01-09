@@ -8,9 +8,9 @@ import ErrorPage from "../error";
 import PageWrapper from "../../components/PageWrapper";
 import { useState } from "react";
 import { RAPISurahDetail } from "../../interfaces";
-import Ayat from "./Ayat";
 import LazyLoad from "react-lazy-load";
 import TafsirDialog from "../../components/TafsirDialog";
+import Ayat from "../../components/Ayat";
 
 const DetailSurat = () => {
   const { id } = useParams();

@@ -1,7 +1,7 @@
-import MainCard from "../../components/MainCard";
 import Typography from "@mui/material/Typography";
 import { Dispatch, SetStateAction } from "react";
 import Button from "@mui/material/Button";
+import MainCard from "./MainCard";
 
 interface AyatProps {
   arab: string;
