@@ -5,6 +5,7 @@ import ListIcon from "@mui/icons-material/List";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import MainCard from "./MainCard";
+import { isMobile } from "react-device-detect";
 
 interface navigationBtn {
   disabled?: boolean;
@@ -28,7 +29,7 @@ export default function PageHeader({ prev, next, list }: PageHeaderProps) {
       }}
     >
       <MainCard
-        direction="row"
+        direction={isMobile ? "column" : "row"}
         gap={2}
         wrap
         sx={{ justifyContent: "space-around" }}
