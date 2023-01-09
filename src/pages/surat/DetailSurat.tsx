@@ -46,45 +46,47 @@ const DetailSurat = () => {
           disabled: id === "114",
         }}
       />
-      <MainCard center gap={1} sx={{ paddingLeft: "3em", paddingRight: "3em" }}>
-        {data?.code === 200 ? (
-          <>
-            <Typography variant="h3" mt={5}>
-              {data.data.name.short}
-            </Typography>
-            <Typography variant="body1">
-              {data.data.number}. ({data.data.name.transliteration.id} /{" "}
-              {data.data.name.translation.id})
-            </Typography>
-            <Typography variant="body1">
-              Diturunkan di {data.data.revelation.id}
-            </Typography>
-            <Typography variant="body1">
-              Jumlah ayat: {data.data.numberOfVerses}
-            </Typography>
-            <Typography
-              variant="body1"
-              textAlign="center"
-              dangerouslySetInnerHTML={{ __html: data.data.tafsir.id }}
-            />
-            {data.data.verses.map((data) => (
-              <LazyLoad key={data.number.inQuran}>
-                <Ayat
-                  arab={data.text.arab}
-                  nomor={`${data.number.inSurah}`}
-                  arti={data.translation.id}
-                  tafsir={data.tafsir.id.long}
-                  audio={data.audio.primary}
-                  setTafsirContent={setTafsirContent}
-                  setTafsirOpen={setTafsirOpen}
-                />
-              </LazyLoad>
-            ))}
-          </>
-        ) : (
-          <LoadingIndicator />
-        )}
-      </MainCard>
+      {data?.code === 200 ? (
+        <MainCard
+          center
+          gap={1}
+          sx={{ paddingLeft: "3em", paddingRight: "3em" }}
+        >
+          <Typography variant="h3" mt={5}>
+            {data.data.name.short}
+          </Typography>
+          <Typography variant="body1">
+            {data.data.number}. ({data.data.name.transliteration.id} /{" "}
+            {data.data.name.translation.id})
+          </Typography>
+          <Typography variant="body1">
+            Diturunkan di {data.data.revelation.id}
+          </Typography>
+          <Typography variant="body1">
+            Jumlah ayat: {data.data.numberOfVerses}
+          </Typography>
+          <Typography
+            variant="body1"
+            textAlign="center"
+            dangerouslySetInnerHTML={{ __html: data.data.tafsir.id }}
+          />
+          {data.data.verses.map((data) => (
+            <LazyLoad key={data.number.inQuran}>
+              <Ayat
+                arab={data.text.arab}
+                nomor={`${data.number.inSurah}`}
+                arti={data.translation.id}
+                tafsir={data.tafsir.id.long}
+                audio={data.audio.primary}
+                setTafsirContent={setTafsirContent}
+                setTafsirOpen={setTafsirOpen}
+              />
+            </LazyLoad>
+          ))}
+        </MainCard>
+      ) : (
+        <LoadingIndicator />
+      )}
     </PageWrapper>
   );
 };
