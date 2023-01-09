@@ -24,7 +24,6 @@ export default function PageHeader({ prev, next, list }: PageHeaderProps) {
     <AppBar
       position="sticky"
       sx={{
-        width: "95vw",
         boxShadow: "0",
       }}
     >

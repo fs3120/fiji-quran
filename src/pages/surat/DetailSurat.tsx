@@ -33,22 +33,22 @@ const DetailSurat = () => {
         tafsirOpen={tafsirOpen}
         setTafsirOpen={setTafsirOpen}
       />
+      <PageHeader
+        list={{ label: "Daftar Surat", navigation: "/surat" }}
+        prev={{
+          label: "Surat Sebelumnya",
+          navigation: `/surat/${+id - 1}`,
+          disabled: id === "1",
+        }}
+        next={{
+          label: "Surat Selanjutnya",
+          navigation: `/surat/${+id + 1}`,
+          disabled: id === "114",
+        }}
+      />
       <MainCard center gap={1} sx={{ paddingLeft: "3em", paddingRight: "3em" }}>
         {data?.code === 200 ? (
           <>
-            <PageHeader
-              list={{ label: "Daftar Surat", navigation: "/surat" }}
-              prev={{
-                label: "Surat Sebelumnya",
-                navigation: `/surat/${+id - 1}`,
-                disabled: id === "1",
-              }}
-              next={{
-                label: "Surat Selanjutnya",
-                navigation: `/surat/${+id + 1}`,
-                disabled: id === "114",
-              }}
-            />
             <Typography variant="h3" mt={5}>
               {data.data.name.short}
             </Typography>
