@@ -60,7 +60,7 @@ const DetailSurat = () => {
             {data.data.name.translation.id})
           </Typography>
           <Typography variant="body1">
-            Diturunkan di {data.data.revelation.id}
+            Surat {data.data.revelation.id}
           </Typography>
           <Typography variant="body1">
             Jumlah ayat: {data.data.numberOfVerses}
