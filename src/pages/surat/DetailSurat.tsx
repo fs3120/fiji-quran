@@ -70,11 +70,12 @@ const DetailSurat = () => {
             textAlign="center"
             dangerouslySetInnerHTML={{ __html: data.data.tafsir.id }}
           />
-          {data.data.verses.map((data) => (
+          {data.data.verses.map((data, index) => (
             <LazyLoad key={data.number.inQuran}>
               <Ayat
+                index={index}
+                nomor_ayat={`${data.number.inSurah}`}
                 arab={data.text.arab}
-                nomor={`${data.number.inSurah}`}
                 arti={data.translation.id}
                 tafsir={data.tafsir.id.long}
                 audio={data.audio.primary}

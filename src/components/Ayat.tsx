@@ -15,7 +15,8 @@ interface ISurat {
 interface AyatProps {
   arab: string;
   arti: string;
-  nomor: string;
+  index: number;
+  nomor_ayat: string;
   tafsir: string;
   audio: string;
   surat?: ISurat | null;
@@ -26,7 +27,8 @@ interface AyatProps {
 export default function Ayat({
   arab,
   arti,
-  nomor,
+  index,
+  nomor_ayat,
   tafsir,
   audio,
   surat,
@@ -35,14 +37,12 @@ export default function Ayat({
 }: AyatProps) {
   const playNext = () => {
     const allAudio = document.getElementsByTagName("audio");
-    if (+nomor + 1 <= allAudio.length) {
-      allAudio[+nomor].play();
-      allAudio[+nomor].scrollIntoView({
-        behavior: "auto",
-        block: "center",
-        inline: "center",
-      });
-    }
+    allAudio[index + 1].play();
+    allAudio[index + 1].scrollIntoView({
+      behavior: "auto",
+      block: "center",
+      inline: "center",
+    });
   };
   return (
     <MainCard sx={{ width: "90vw" }}>
@@ -66,7 +66,7 @@ export default function Ayat({
         {arab}
       </Typography>
       <Typography variant="body1">
-        {nomor}. {arti}
+        {nomor_ayat}. {arti}
       </Typography>
       <MainCard
         direction="row"
@@ -76,7 +76,7 @@ export default function Ayat({
         sx={{ alignItems: "center" }}
       >
         <audio
-          id={`audio${+nomor}`}
+          id={`audio${index}`}
           onEnded={playNext}
           preload="none"
           controls

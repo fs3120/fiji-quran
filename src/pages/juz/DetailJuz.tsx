@@ -94,7 +94,7 @@ const DetailJuz = () => {
           <Typography variant="body1">
             Jumlah ayat: {dataJuz.data.totalVerses}
           </Typography>
-          {dataJuz.data.verses.map((data) => {
+          {dataJuz.data.verses.map((data, index) => {
             data.number.inSurah === 1 && suratIndex++;
             return (
               <LazyLoad key={data.number.inQuran}>
@@ -102,8 +102,9 @@ const DetailJuz = () => {
                   surat={
                     data.number.inSurah === 1 ? daftarSurat[suratIndex] : null
                   }
+                  index={index}
+                  nomor_ayat={`${data.number.inSurah}`}
                   arab={data.text.arab}
-                  nomor={`${data.number.inSurah}`}
                   arti={data.translation.id}
                   tafsir={data.tafsir.id.long}
                   audio={data.audio.primary}
