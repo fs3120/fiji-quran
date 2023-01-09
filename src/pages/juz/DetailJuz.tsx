@@ -87,7 +87,7 @@ const DetailJuz = () => {
           <Typography variant="h3" mt={5}>
             {`Juz ${dataJuz.data.juz}`}
           </Typography>
-          <Typography variant="body1">
+          <Typography variant="body1" textAlign="center">
             {`Mulai dari surat ${dataJuz.data.juzStartInfo} hingga
             surat ${dataJuz.data.juzEndInfo}`}
           </Typography>
