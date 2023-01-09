@@ -3,7 +3,6 @@ import Typography from "@mui/material/Typography";
 import useFetch from "../../utils/hook/useFetch";
 import MainCard from "../../components/MainCard";
 import LoadingIndicator from "../../components/LoadingIndicator";
-import SuratHeader from "./SuratHeader";
 import ErrorPage from "../error";
 import PageWrapper from "../../components/PageWrapper";
 import { useState } from "react";
@@ -11,6 +10,7 @@ import { RAPISurahDetail } from "../../interfaces";
 import LazyLoad from "react-lazy-load";
 import TafsirDialog from "../../components/TafsirDialog";
 import Ayat from "../../components/Ayat";
+import PageHeader from "../../components/PageHeader";
 
 const DetailSurat = () => {
   const { id } = useParams();
@@ -36,7 +36,19 @@ const DetailSurat = () => {
       <MainCard center gap={1} sx={{ paddingLeft: "3em", paddingRight: "3em" }}>
         {data?.code === 200 ? (
           <>
-            <SuratHeader id={id} />
+            <PageHeader
+              list={{ label: "Daftar Surat", navigation: "/surat" }}
+              prev={{
+                label: "Surat Sebelumnya",
+                navigation: `/surat/${+id - 1}`,
+                disabled: id === "1",
+              }}
+              next={{
+                label: "Surat Selanjutnya",
+                navigation: `/surat/${+id + 1}`,
+                disabled: id === "114",
+              }}
+            />
             <Typography variant="h3" mt={5}>
               {data.data.name.short}
             </Typography>

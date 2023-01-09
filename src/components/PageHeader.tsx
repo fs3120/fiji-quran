@@ -4,9 +4,21 @@ import { useNavigate } from "react-router-dom";
 import ListIcon from "@mui/icons-material/List";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import MainCard from "../../components/MainCard";
+import MainCard from "./MainCard";
 
-export default function SuratHeader({ id }: { id: string }) {
+interface navigationBtn {
+  disabled?: boolean;
+  label: string;
+  navigation: string;
+}
+
+interface PageHeaderProps {
+  prev: navigationBtn;
+  next: navigationBtn;
+  list: navigationBtn;
+}
+
+export default function PageHeader({ prev, next, list }: PageHeaderProps) {
   const navigate = useNavigate();
   return (
     <AppBar
@@ -24,34 +36,34 @@ export default function SuratHeader({ id }: { id: string }) {
       >
         <Button
           startIcon={<ArrowBackIcon />}
-          disabled={id === "1"}
+          disabled={prev.disabled}
           variant="contained"
-          onClick={() => navigate(`/surat/${+id - 1}`)}
+          onClick={() => navigate(prev.navigation)}
           sx={{
             backgroundColor: "#68B984",
             ":hover": { backgroundColor: "#3e8055" },
           }}
         >
-          Surat Sebelumnya
+          {prev.label}
         </Button>
         <Button
           startIcon={<ListIcon />}
           variant="contained"
-          onClick={() => navigate("/surat")}
+          onClick={() => navigate(list.navigation)}
         >
-          Daftar Surat
+          {list.label}
         </Button>
         <Button
           endIcon={<ArrowForwardIcon />}
-          disabled={id === "114"}
+          disabled={next.disabled}
           variant="contained"
-          onClick={() => navigate(`/surat/${+id + 1}`)}
+          onClick={() => navigate(next.navigation)}
           sx={{
             backgroundColor: "#68B984",
             ":hover": { backgroundColor: "#3e8055" },
           }}
         >
-          Surat Selanjutnya
+          {next.label}
         </Button>
       </MainCard>
     </AppBar>
