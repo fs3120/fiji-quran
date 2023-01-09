@@ -46,7 +46,7 @@ const DetailSurat = () => {
           disabled: id === "114",
         }}
       />
-      {data?.code === 200 ? (
+      {data ? (
         <MainCard
           center
           gap={1}
