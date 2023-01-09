@@ -4,7 +4,7 @@ import { Button } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import useFetch from "../../utils/hook/useFetch";
 import { useNavigate } from "react-router-dom";
-import { ISurah, RAPISurah } from "../../interfaces";
+import { ISurah, RAPISurah } from "../../interfaces/surat";
 
 const ListSurat = () => {
   const navigate = useNavigate();

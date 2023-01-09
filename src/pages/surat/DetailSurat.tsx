@@ -6,11 +6,11 @@ import LoadingIndicator from "../../components/LoadingIndicator";
 import ErrorPage from "../error";
 import PageWrapper from "../../components/PageWrapper";
 import { useState } from "react";
-import { RAPISurahDetail } from "../../interfaces";
 import LazyLoad from "react-lazy-load";
 import TafsirDialog from "../../components/TafsirDialog";
 import Ayat from "../../components/Ayat";
 import PageHeader from "../../components/PageHeader";
+import { RAPISurahDetail } from "../../interfaces/surat";
 
 const DetailSurat = () => {
   const { id } = useParams();
