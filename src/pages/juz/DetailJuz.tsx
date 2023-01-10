@@ -35,7 +35,7 @@ const DetailJuz = () => {
   });
 
   const daftarSurat =
-    dataSurah?.code === 200 &&
+    dataSurah &&
     dataJuz?.data.verses
       .map((ayat) => {
         if (ayat.number.inSurah === 1) {
