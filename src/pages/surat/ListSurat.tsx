@@ -5,12 +5,13 @@ import Typography from "@mui/material/Typography";
 import useFetch from "../../utils/hook/useFetch";
 import { useNavigate } from "react-router-dom";
 import { ISurah, RAPISurah } from "../../interfaces/surat";
+import { SURAH_URL } from "../../config";
 
 const ListSurat = () => {
   const navigate = useNavigate();
 
   const { data } = useFetch<RAPISurah>({
-    url: "https://quran-api-black.vercel.app/surah/",
+    url: SURAH_URL,
   });
 
   return (

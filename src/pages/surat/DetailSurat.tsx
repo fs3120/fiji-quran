@@ -11,6 +11,7 @@ import TafsirDialog from "../../components/TafsirDialog";
 import Ayat from "../../components/Ayat";
 import PageHeader from "../../components/PageHeader";
 import { RAPISurahDetail } from "../../interfaces/surat";
+import { SURAH_URL } from "../../config";
 
 const DetailSurat = () => {
   const { id } = useParams();
@@ -23,7 +24,7 @@ const DetailSurat = () => {
   const [tafsirOpen, setTafsirOpen] = useState(false);
 
   const { data } = useFetch<RAPISurahDetail>({
-    url: `https://quran-api-black.vercel.app/surah/${id}`,
+    url: `${SURAH_URL}/${id}`,
   });
 
   return (

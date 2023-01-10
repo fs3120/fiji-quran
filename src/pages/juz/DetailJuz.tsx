@@ -12,6 +12,7 @@ import Ayat from "../../components/Ayat";
 import PageHeader from "../../components/PageHeader";
 import { RAPIJuz } from "../../interfaces/juz";
 import { RAPISurah } from "../../interfaces/surat";
+import { JUZ_URL, SURAH_URL } from "../../config";
 
 const DetailJuz = () => {
   const { id } = useParams();
@@ -26,11 +27,11 @@ const DetailJuz = () => {
   const [tafsirOpen, setTafsirOpen] = useState(false);
 
   const { data: dataJuz } = useFetch<RAPIJuz>({
-    url: `https://quran-api-black.vercel.app/juz/${id}`,
+    url: `${JUZ_URL}/${id}`,
   });
 
   const { data: dataSurah } = useFetch<RAPISurah>({
-    url: `https://quran-api-black.vercel.app/surah`,
+    url: SURAH_URL,
   });
 
   const daftarSurat =
