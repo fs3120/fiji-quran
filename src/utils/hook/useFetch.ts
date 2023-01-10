@@ -15,6 +15,7 @@ export default function useFetch<T>({ url, log }: UseFetchProps) {
     revalidateOnFocus: false,
     onSuccess: (data) => {
       if (log) {
+        console.log(`Fetching from ${url}`);
         console.log(data);
       }
     },
