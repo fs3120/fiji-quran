@@ -42,17 +42,17 @@ const DetailJuz = () => {
           let jumlahAyat = 0;
           const surat = dataSurah?.data;
           for (let i = 0; i < dataSurah?.data.length; i++) {
-            jumlahAyat += surat[i].numberOfVerses;
             if (jumlahAyat === ayat.number.inQuran - 1) {
               return {
-                arti: surat[i + 1].name.translation.id,
-                arab: surat[i + 1].name.long,
-                indo: surat[i + 1].name.transliteration.id,
-                desc: surat[i + 1].tafsir.id,
-                jumlah_ayat: surat[i + 1].numberOfVerses,
-                revelation: surat[i + 1].revelation.id,
+                arti: surat[i].name.translation.id,
+                arab: surat[i].name.long,
+                indo: surat[i].name.transliteration.id,
+                desc: surat[i].tafsir.id,
+                jumlah_ayat: surat[i].numberOfVerses,
+                revelation: surat[i].revelation.id,
               };
             }
+            jumlahAyat += surat[i].numberOfVerses;
           }
         }
         return null;
