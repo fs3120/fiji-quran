@@ -1,4 +1,3 @@
-import MainCard from "../../components/MainCard";
 import PageWrapper from "../../components/PageWrapper";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
@@ -6,7 +5,7 @@ import ListJuz from "./ListJuz";
 
 export default function JuzPage() {
   return (
-    <PageWrapper title="Juz Page">
+    <PageWrapper title="Daftar Juz">
       <Typography
         color={"#68B984"}
         fontWeight="bold"
