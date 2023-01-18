@@ -19,7 +19,7 @@ export default function DetailPage() {
 
   let suratIndex = -1; // I give up, I use brute force way
 
-  if (!id || isNaN(+id) || +id < 1 || +id > 114) {
+  if (!id || isNaN(+id) || +id < 1 || +id > 604) {
     return <ErrorPage />;
   }
 

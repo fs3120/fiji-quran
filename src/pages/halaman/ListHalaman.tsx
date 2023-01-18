@@ -6,7 +6,7 @@ import generateNumber from "../../utils/generate-number";
 
 const ListHalaman = () => {
   const navigate = useNavigate();
-  const listHalaman = generateNumber(1, 114);
+  const listHalaman = generateNumber(1, 604);
   return (
     <MainCard direction="row" wrap center gap={2} padding={5}>
       {listHalaman.map((page) => (
