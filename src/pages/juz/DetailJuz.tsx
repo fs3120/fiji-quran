@@ -14,7 +14,7 @@ import { RAPIJuz } from "../../interfaces/juz";
 import { RAPISurah } from "../../interfaces/surat";
 import { JUZ_URL, SURAH_URL } from "../../config";
 
-const DetailJuz = () => {
+export default function DetailJuz() {
   const { id } = useParams();
 
   let suratIndex = -1; // I give up, I use brute force way
@@ -121,5 +121,3 @@ const DetailJuz = () => {
     </PageWrapper>
   );
 };
-
-export default DetailJuz;
