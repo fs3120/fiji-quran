@@ -60,7 +60,7 @@ export default function DetailPage() {
       .filter((e) => e !== null);
 
   return (
-    <PageWrapper title="Detail Surat">
+    <PageWrapper title="Detail Halaman">
       <TafsirDialog
         tafsirContent={tafsirContent}
         tafsirOpen={tafsirOpen}
