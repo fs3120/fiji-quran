@@ -1,7 +1,7 @@
 
 # Fiji Qur'an
 
-Read qur'an with its tafsir with ease.
+Read qur'an and its tafsir with ease.
 
 ## Deployment
 
