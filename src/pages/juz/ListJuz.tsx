@@ -2,11 +2,11 @@ import MainCard from "../../components/MainCard";
 import { Button } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
-import generateJuz from "../../utils/generate-juz";
+import generateNumber from "../../utils/generate-number";
 
 const ListJuz = () => {
   const navigate = useNavigate();
-  const listJuz = generateJuz();
+  const listJuz = generateNumber(1, 30);
   return (
     <MainCard direction="row" wrap center gap={2} padding={5}>
       {listJuz.map((juz) => (
