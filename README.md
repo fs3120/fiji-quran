@@ -11,7 +11,7 @@ You can access the app here: [https://fiji-quran.vercel.app](https://fiji-quran.
 
 This app uses data from this repository: https://github.com/gadingnst/quran-api
 
-We cloned the repository just as the author recommended. You can access our cloned API here: https://quran-api-black.vercel.app
+We cloned the repository just as the author recommended: https://quran-api-black.vercel.app
 
 We added 1 more API from the original repository
 
