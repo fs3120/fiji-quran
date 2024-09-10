@@ -26,5 +26,5 @@ We manually inputted the data for this new API based on Al-Qur'an with Indonesia
 
 ## Authors
 
-- [@fikrisyahid](https://github.com/fikrisyahid)
+- [@fs3120](https://github.com/fs3120)
 - [@fyn-x](https://github.com/Fyn-x)
