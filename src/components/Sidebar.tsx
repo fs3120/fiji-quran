@@ -27,7 +27,7 @@ const PageListsItem: TMenuListItem[] = [
   [
     "Github",
     <GitHubIcon sx={{ color: "#68b883" }} />,
-    "https://github.com/fikrisyahid/fiji-quran",
+    "https://github.com/fs3120/fiji-quran",
     true,
   ],
 ];

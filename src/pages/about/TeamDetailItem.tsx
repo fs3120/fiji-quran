@@ -12,7 +12,7 @@ interface TeamDetailItemProps {
   img: string;
   github: string;
   ig: string;
-  linkedIn: string;
+  linkedIn?: string;
 }
 
 const TeamDetailItem = ({
@@ -59,14 +59,16 @@ const TeamDetailItem = ({
         >
           <InstagramIcon />
         </IconButton>
-        <IconButton
-          onClick={() => {
-            window.open(linkedIn, "_blank");
-          }}
-          sx={{ color: "black" }}
-        >
-          <LinkedInIcon />
-        </IconButton>
+        {linkedIn && (
+          <IconButton
+            onClick={() => {
+              window.open(linkedIn, "_blank");
+            }}
+            sx={{ color: "black" }}
+          >
+            <LinkedInIcon />
+          </IconButton>
+        )}
       </Box>
     </MainCard>
   );
